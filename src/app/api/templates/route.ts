@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/db';
 
-// Pre-built meme templates
+// Pre-built meme templates - no database needed
 const MEME_TEMPLATES = [
   {
     id: 'bruh-moment',
@@ -154,76 +153,22 @@ const MEME_TEMPLATES = [
   },
 ];
 
-// Get all templates (including pre-built ones)
+// Get all templates (no database - works on Vercel)
 export async function GET() {
-  try {
-    // Get user templates from database
-    const userTemplates = await db.userTemplate.findMany({
-      orderBy: { createdAt: 'desc' },
-    });
-
-    // Combine pre-built templates with user templates
-    const allTemplates = [...MEME_TEMPLATES, ...userTemplates.map(t => ({
-      id: t.id,
-      name: t.name,
-      category: t.category,
-      description: t.description || '',
-      thumbnail: t.thumbnail,
-      data: t.data,
-      isUserCreated: true,
-    }))];
-
-    return NextResponse.json({ templates: allTemplates });
-  } catch (error: any) {
-    console.error('Get templates error:', error);
-    // Return pre-built templates even if database fails
-    return NextResponse.json({ templates: MEME_TEMPLATES });
-  }
+  return NextResponse.json({ templates: MEME_TEMPLATES });
 }
 
-// Create a new template
+// Create a new template (not available on serverless)
 export async function POST(request: NextRequest) {
-  try {
-    const { name, category, description, data, thumbnail, isPublic } = await request.json();
-
-    if (!name || !data) {
-      return NextResponse.json({ error: 'Name and data are required' }, { status: 400 });
-    }
-
-    const template = await db.userTemplate.create({
-      data: {
-        name,
-        category: category || 'custom',
-        description,
-        data: typeof data === 'string' ? data : JSON.stringify(data),
-        thumbnail,
-        isPublic: isPublic || false,
-      },
-    });
-
-    return NextResponse.json({ success: true, template });
-  } catch (error: any) {
-    console.error('Create template error:', error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+  return NextResponse.json({ 
+    error: 'Template creation not available on serverless deployment',
+    templates: MEME_TEMPLATES 
+  });
 }
 
-// Delete a user template
+// Delete a user template (not available on serverless)
 export async function DELETE(request: NextRequest) {
-  try {
-    const { id } = await request.json();
-
-    if (!id) {
-      return NextResponse.json({ error: 'Template ID is required' }, { status: 400 });
-    }
-
-    await db.userTemplate.delete({
-      where: { id },
-    });
-
-    return NextResponse.json({ success: true });
-  } catch (error: any) {
-    console.error('Delete template error:', error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+  return NextResponse.json({ 
+    error: 'Template deletion not available on serverless deployment' 
+  });
 }

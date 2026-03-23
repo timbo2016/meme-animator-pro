@@ -531,3 +531,192 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
 ⚠ Fast Refresh had to perform a full reload due to a runtime error.
  GET / 200 in 236ms (compile: 58ms, render: 178ms)
  GET / 200 in 62ms (compile: 6ms, render: 55ms)
+==========================================
+[2026-03-23 17:00:18] Starting: bun install
+==========================================
+[BUN] Installing dependencies...
+[0.03ms] ".env"
+bun install v1.3.10 (30e609e0)
+
+Checked 846 installs across 915 packages (no changes) [27.00ms]
+==========================================
+[2026-03-23 17:00:18] Completed: bun install
+[LOG] Step: bun install | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-23 17:00:18] Starting: bun run db:push
+==========================================
+[BUN] Setting up database...
+$ prisma db push
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "custom.db" at "file:/home/z/my-project/db/custom.db"
+
+The database is already in sync with the Prisma schema.
+
+Running generate... (Use --skip-generate to skip the generators)
+[2K[1A[2K[GRunning generate... - Prisma Client
+[2K[1A[2K[G✔ Generated Prisma Client (v6.19.2) to ./node_modules/@prisma/client in 43ms
+
+==========================================
+[2026-03-23 17:00:18] Completed: bun run db:push
+[LOG] Step: bun run db:push | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-23 17:00:18] Starting: Starting Next.js dev server
+==========================================
+[BUN] Starting development server...
+==========================================
+[2026-03-23 17:00:18] Completed: Starting Next.js dev server
+[LOG] Step: Starting Next.js dev server | Duration: 0s
+==========================================
+
+==========================================
+$ next dev -p 3000 2>&1 | tee dev.log
+[2026-03-23 17:00:18] Starting: Waiting for Next.js dev server
+==========================================
+Waiting for Next.js dev server to be ready on localhost:3000...
+Next.js dev server is ready!
+==========================================
+[2026-03-23 17:00:19] Completed: Waiting for Next.js dev server
+[LOG] Step: Waiting for Next.js dev server | Duration: 1s
+==========================================
+
+==========================================
+[2026-03-23 17:00:19] Starting: Health check
+==========================================
+[BUN] Performing health check...
+[BUN] Health check passed
+==========================================
+[2026-03-23 17:00:19] Completed: Health check
+[LOG] Step: Health check | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-23 17:00:19] Starting: Starting mini-services
+==========================================
+Found mini-services directory, scanning for sub-services...
+Checking service: video-export
+Starting video-export in background...
+[video-export] Started in background (PID: 1989)
+[video-export] Log: /home/z/my-project/.zscripts/mini-service-video-export.log
+Mini-services startup completed. Started 1 service(s).
+==========================================
+[2026-03-23 17:00:19] Completed: Starting mini-services
+[LOG] Step: Starting mini-services | Duration: 0s
+==========================================
+
+Next.js dev server is running in background (PID: 1957).
+Use 'kill 1957' to stop it.
+⨯ Failed to start server
+Error: listen EADDRINUSE: address already in use :::3000
+    at <unknown> (Error: listen EADDRINUSE: address already in use :::3000)
+    at new Promise (<anonymous>) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+[?25h
+==========================================
+[2026-03-23 19:22:26] Starting: bun install
+==========================================
+[BUN] Installing dependencies...
+[0.02ms] ".env"
+bun install v1.3.10 (30e609e0)
+
+Checked 846 installs across 915 packages (no changes) [24.00ms]
+==========================================
+[2026-03-23 19:22:26] Completed: bun install
+[LOG] Step: bun install | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-23 19:22:26] Starting: bun run db:push
+==========================================
+[BUN] Setting up database...
+$ prisma db push
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "custom.db" at "file:/home/z/my-project/db/custom.db"
+
+The database is already in sync with the Prisma schema.
+
+Running generate... (Use --skip-generate to skip the generators)
+[2K[1A[2K[GRunning generate... - Prisma Client
+[2K[1A[2K[G✔ Generated Prisma Client (v6.19.2) to ./node_modules/@prisma/client in 53ms
+
+==========================================
+[2026-03-23 19:22:27] Completed: bun run db:push
+[LOG] Step: bun run db:push | Duration: 1s
+==========================================
+
+==========================================
+[2026-03-23 19:22:27] Starting: Starting Next.js dev server
+==========================================
+[BUN] Starting development server...
+==========================================
+$ next dev -p 3000 2>&1 | tee dev.log
+[2026-03-23 19:22:27] Completed: Starting Next.js dev server
+[LOG] Step: Starting Next.js dev server | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-23 19:22:27] Starting: Waiting for Next.js dev server
+==========================================
+Waiting for Next.js dev server to be ready on localhost:3000...
+Attempt 1/60: Next.js dev server not ready yet, waiting...
+▲ Next.js 16.1.3 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://21.0.21.35:3000
+- Environments: .env
+
+✓ Starting...
+✓ Ready in 600ms
+Next.js dev server is ready!
+ GET / 200 in 1474ms (compile: 1223ms, render: 251ms)
+==========================================
+[2026-03-23 19:22:29] Completed: Waiting for Next.js dev server
+[LOG] Step: Waiting for Next.js dev server | Duration: 2s
+==========================================
+
+==========================================
+[2026-03-23 19:22:29] Starting: Health check
+==========================================
+[BUN] Performing health check...
+ GET / 200 in 94ms (compile: 3ms, render: 91ms)
+[BUN] Health check passed
+==========================================
+[2026-03-23 19:22:29] Completed: Health check
+[LOG] Step: Health check | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-23 19:22:29] Starting: Starting mini-services
+==========================================
+Found mini-services directory, scanning for sub-services...
+Checking service: video-export
+Starting video-export in background...
+[video-export] Started in background (PID: 6798)
+[video-export] Log: /home/z/my-project/.zscripts/mini-service-video-export.log
+Mini-services startup completed. Started 1 service(s).
+==========================================
+[2026-03-23 19:22:29] Completed: Starting mini-services
+[LOG] Step: Starting mini-services | Duration: 0s
+==========================================
+
+Next.js dev server is running in background (PID: 6703).
+Use 'kill 6703' to stop it.
+ GET / 200 in 105ms (compile: 3ms, render: 102ms)
+ GET / 200 in 93ms (compile: 2ms, render: 90ms)
+ GET / 200 in 103ms (compile: 3ms, render: 100ms)
+ GET / 200 in 92ms (compile: 2ms, render: 89ms)
+ GET / 200 in 94ms (compile: 3ms, render: 91ms)
+ GET / 200 in 94ms (compile: 4ms, render: 90ms)
+ GET / 200 in 91ms (compile: 4ms, render: 86ms)
+ GET / 200 in 79ms (compile: 3ms, render: 76ms)
+ GET / 200 in 73ms (compile: 3ms, render: 71ms)
+ GET / 200 in 75ms (compile: 3ms, render: 72ms)

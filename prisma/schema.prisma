@@ -1,9 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -29,4 +26,28 @@ model Post {
   authorId  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+// Animation Project Storage
+model AnimationProject {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  data        String   // JSON stringified project data
+  thumbnail   String?  // Base64 thumbnail
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// User Templates
+model UserTemplate {
+  id          String   @id @default(cuid())
+  name        String
+  category    String
+  description String?
+  data        String   // JSON stringified template data
+  thumbnail   String?
+  isPublic    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

@@ -5,5 +5,17 @@ No packages! Deleted empty lockfile
 [1.00ms] done
 [video-export] Running bun run dev...
 $ bun --hot index.ts
-Video Export Service running on port 3031
-Health check: http://localhost:3031/health
+149 | }
+150 | 
+151 | // Start the server
+152 | const PORT = 3031;
+153 | 
+154 | serve({
+      ^
+error: Failed to start server. Is port 3031 in use?
+ syscall: "listen",
+   errno: 0,
+    code: "EADDRINUSE"
+
+      at /home/z/my-project/mini-services/video-export/index.ts:154:1
+      at loadAndEvaluateModule (2:1)

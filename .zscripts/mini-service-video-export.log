@@ -1,0 +1,9 @@
+[video-export] Installing dependencies...
+bun install v1.3.10 (30e609e0)
+No packages! Deleted empty lockfile
+
+[2.00ms] done
+[video-export] Running bun run dev...
+$ bun --hot index.ts
+Video Export Service running on port 3031
+Health check: http://localhost:3031/health
